@@ -261,6 +261,7 @@
                 android:text="시간 예약"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_horizontal"
                 android:id="@+id/textView13" />
 
             <RadioGroup
@@ -292,11 +293,13 @@
                 <CalendarView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:visibility="visible"
                     android:id="@+id/calendarView" />
 
                 <TimePicker
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:visibility="invisible"
                     android:id="@+id/timePicker" />
 
             </FrameLayout>

@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
     CalendarView cv1;
     TextView tx1,tx2;
     LinearLayout lv1,lv2;
-    int num1,num2,num3,sum1;
+    int num1,num2,num3,sum1,sum2;
+    double avg1,avg2,avg3;
 
 
 
@@ -81,14 +83,76 @@ public class MainActivity extends AppCompatActivity {
         bt2.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 num1= Integer.parseInt(edt1.getText().toString());
                 num2= Integer.parseInt(edt2.getText().toString());
                 num3= Integer.parseInt(edt3.getText().toString());
                 sum1=num1+num2+num3;
+                sum2=(num1*15000)+(num2*12000)+(num3*8000);
                 edt4.setText(Integer.toString(sum1));
+
+                if(edt1==null){
+                    Toast.makeText(getApplicationContext(), "인원을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
+                else if(edt2==null){
+                    Toast.makeText(getApplicationContext(), "인원을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
+                else if (edt3==null){
+                    Toast.makeText(getApplicationContext(), "인원을 입력하세요.", Toast.LENGTH_SHORT).show();
+                }
+
+                if(rb1.isChecked()) {
+                    edt6.setText(String.format("%.2f", avg1));
+                }
+                else if (rb2.isChecked()){
+                    edt6.setText(String.format("%.2f", avg2));
+                }
+                else if(rb3.isChecked()){
+                    edt6.setText(String.format("%.2f", avg3));
+                }
             }
         });
 
+        rbg1.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(rb1.isChecked()){
+                    img1.setImageResource(R.drawable.java);
+                    avg1=sum2*0.95;
+                }
+                else if(rb2.isChecked()){
+                    img1.setImageResource(R.drawable.css);
+                    avg2=sum2*0.9;
+                }
+                else if(rb3.isChecked()){
+                    img1.setImageResource(R.drawable.jsp);
+                    avg3=sum2*0.8;
+                }
+            }
+        });
 
+        bt3.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lv1.setVisibility(View.INVISIBLE);
+                lv2.setVisibility(View.VISIBLE);
+                tx2.setTextColor(Color.RED);
+            }
+        });
+
+        rbg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if(i==R.id.radioButton7){
+                    cv1.setVisibility(View.VISIBLE);
+                    tp1.setVisibility(View.INVISIBLE);
+                }
+                else {
+                    cv1.setVisibility(View.INVISIBLE);
+                    tp1.setVisibility(View.VISIBLE);
+                }
+
+            }
+        });
     }
 }
