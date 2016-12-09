@@ -35,14 +35,15 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="0.02"
-        android:visibility="invisible">
+        android:layout_height="443dp"
+        >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/Linear1"
             >
 
             <TextView
@@ -252,7 +253,9 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/Linear2">
 
             <TextView
                 android:text="시간 예약"
@@ -263,7 +266,8 @@
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:id="@+id/radioGroup2">
 
                 <RadioButton
                     android:text="일자 설정"
@@ -296,6 +300,27 @@
                     android:id="@+id/timePicker" />
 
             </FrameLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:text="예약완료"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button4"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:text="이전으로"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button5"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
