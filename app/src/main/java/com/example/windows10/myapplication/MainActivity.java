@@ -179,6 +179,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                ch1.stop();
+                Toast.makeText(getApplicationContext(), year+"년"+month+"월"+day+"일"+hour+"시"+min+"분 예약완료.", Toast.LENGTH_SHORT).show();
+
                 if(edt1==null){
                     Toast.makeText(getApplicationContext(), "인원예약을 먼저하세요.", Toast.LENGTH_SHORT).show();
                 }
