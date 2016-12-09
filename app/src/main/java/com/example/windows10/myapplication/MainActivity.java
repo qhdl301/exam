@@ -77,11 +77,17 @@ public class MainActivity extends AppCompatActivity {
                 ch1.setBase(SystemClock.elapsedRealtime());
                 ch1.start();
                 tx1.setTextColor(Color.BLUE);
-                lv1.setVisibility(View.VISIBLE);
+                if(swt1.isChecked()) {
+                    lv1.setVisibility(View.VISIBLE);
+                }
+                else{
+                    lv1.setVisibility(View.INVISIBLE);
+
+                }
             }
         });
 
-        bt2.setOnClickListener(new Button.OnClickListener() {
+        bt3.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
 
@@ -132,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        bt3.setOnClickListener(new Button.OnClickListener() {
+        bt2.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
                 lv1.setVisibility(View.INVISIBLE);
@@ -191,6 +197,14 @@ public class MainActivity extends AppCompatActivity {
                 else if(edt3==null){
                     Toast.makeText(getApplicationContext(), "인원예약을 먼저하세요.", Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+
+        bt5.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                cv1.setVisibility(View.VISIBLE);
+                tp1.setVisibility(View.INVISIBLE);
             }
         });
     }
