@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity {
     CalendarView cv1;
     TextView tx1,tx2;
     LinearLayout lv1,lv2;
-    int num1,num2,num3,sum1,sum2;
+    int num1,num2,num3,sum1,sum2,year,month,day,hour,min;
     double avg1,avg2,avg3;
+
 
 
 
@@ -152,6 +153,41 @@ public class MainActivity extends AppCompatActivity {
                     tp1.setVisibility(View.VISIBLE);
                 }
 
+            }
+        });
+
+
+        cv1.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(CalendarView calendarView, int i, int i1, int i2) {
+                year=i;
+                month=i1;
+                day=i2;
+            }
+        });
+
+        tp1.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
+            @Override
+            public void onTimeChanged(TimePicker timePicker, int i, int i1) {
+                hour=i;
+                min=i1;
+            }
+        });
+
+
+        bt4.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(edt1==null){
+                    Toast.makeText(getApplicationContext(), "인원예약을 먼저하세요.", Toast.LENGTH_SHORT).show();
+                }
+                else if (edt2==null){
+                    Toast.makeText(getApplicationContext(), "인원예약을 먼저하세요.", Toast.LENGTH_SHORT).show();
+                }
+                else if(edt3==null){
+                    Toast.makeText(getApplicationContext(), "인원예약을 먼저하세요.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
