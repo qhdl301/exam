@@ -17,6 +17,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
+
 public class MainActivity extends AppCompatActivity {
 
     Switch swt1;
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     CalendarView cv1;
     TextView tx1,tx2;
     LinearLayout lv1,lv2;
+    int num1,num2,num3,sum1;
 
 
 
@@ -75,6 +77,18 @@ public class MainActivity extends AppCompatActivity {
                 lv1.setVisibility(View.VISIBLE);
             }
         });
+
+        bt2.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                num1= Integer.parseInt(edt1.getText().toString());
+                num2= Integer.parseInt(edt2.getText().toString());
+                num3= Integer.parseInt(edt3.getText().toString());
+                sum1=num1+num2+num3;
+                edt4.setText(Integer.toString(sum1));
+            }
+        });
+
 
     }
 }
