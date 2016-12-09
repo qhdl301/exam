@@ -1,6 +1,8 @@
 package com.example.windows10.myapplication;
 
+import android.graphics.Color;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -8,6 +10,7 @@ import android.widget.CalendarView;
 import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Switch;
@@ -26,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     TimePicker tp1;
     CalendarView cv1;
     TextView tx1,tx2;
+    LinearLayout lv1,lv2;
 
 
 
@@ -58,12 +62,17 @@ public class MainActivity extends AppCompatActivity {
         img1=(ImageView)findViewById(R.id.imageView);
         cv1=(CalendarView)findViewById(R.id.calendarView);
         tp1=(TimePicker)findViewById(R.id.timePicker);
+        lv1=(LinearLayout)findViewById(R.id.Linear1);
+        lv2=(LinearLayout)findViewById(R.id.Linear2);
 
 
         swt1.setOnClickListener(new Switch.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                ch1.setBase(SystemClock.elapsedRealtime());
+                ch1.start();
+                tx1.setTextColor(Color.BLUE);
+                lv1.setVisibility(View.VISIBLE);
             }
         });
 
