@@ -41,7 +41,7 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:visibility="invisible"
             android:id="@+id/Linear1"
             >
@@ -68,13 +68,6 @@
 
             </LinearLayout>
 
-            <TextView
-                android:text="인원예약"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:id="@+id/textView12" />
-
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -83,7 +76,7 @@
                 <TextView
                     android:text="청소년(12000원)"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:id="@+id/textView6"
                     android:layout_weight="6.75" />
 
@@ -129,17 +122,15 @@
 
                     <RadioButton
                         android:text="기본할인(5% 할인)"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/radioButton4"
-                        android:layout_weight="1" />
+                        android:id="@+id/radioButton4" />
 
                     <RadioButton
                         android:text="현금할인(10% 할인)"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/radioButton5"
-                        android:layout_weight="1" />
+                        android:id="@+id/radioButton5" />
 
                     <RadioButton
                         android:text="Membership있음(20% 할인)"
@@ -151,7 +142,7 @@
                 </RadioGroup>
 
                 <ImageView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="94dp"
                     app:srcCompat="@android:drawable/alert_dark_frame"
                     android:id="@+id/imageView" />
@@ -247,6 +238,14 @@
 
         </LinearLayout>
 
+        <TextView
+            android:text="인원예약"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:id="@+id/textView12"
+            android:layout_weight="1" />
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -263,7 +262,7 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="20dp"
                 android:orientation="horizontal"
                 android:id="@+id/radioGroup2">
 
@@ -285,7 +284,7 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <CalendarView
                     android:layout_width="match_parent"
@@ -304,7 +303,7 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="32dp">
 
                 <Button
                     android:text="예약완료"

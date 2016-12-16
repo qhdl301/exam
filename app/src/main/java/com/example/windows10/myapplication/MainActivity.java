@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else{
                     lv1.setVisibility(View.INVISIBLE);
+                    lv2.setVisibility(View.INVISIBLE);
+                    ch1.stop();
 
                 }
             }
@@ -96,7 +98,8 @@ public class MainActivity extends AppCompatActivity {
                 num3= Integer.parseInt(edt3.getText().toString());
                 sum1=num1+num2+num3;
                 sum2=(num1*15000)+(num2*12000)+(num3*8000);
-                edt4.setText(Integer.toString(sum1));
+                edt5.setText(Integer.toString(sum1));
+                edt4.setText(Integer.toString(sum2));
 
                 if(edt1==null){
                     Toast.makeText(getApplicationContext(), "인원을 입력하세요.", Toast.LENGTH_SHORT).show();
@@ -109,13 +112,13 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(rb1.isChecked()) {
-                    edt6.setText(String.format("%.2f", avg1));
+                    edt4.setText(String.format("%.2f", avg1));
                 }
                 else if (rb2.isChecked()){
-                    edt6.setText(String.format("%.2f", avg2));
+                    edt4.setText(String.format("%.2f", avg2));
                 }
                 else if(rb3.isChecked()){
-                    edt6.setText(String.format("%.2f", avg3));
+                    edt4.setText(String.format("%.2f", avg3));
                 }
             }
         });
@@ -143,6 +146,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 lv1.setVisibility(View.INVISIBLE);
                 lv2.setVisibility(View.VISIBLE);
+                tx1.setVisibility(View.INVISIBLE);
                 tx2.setTextColor(Color.RED);
             }
         });
